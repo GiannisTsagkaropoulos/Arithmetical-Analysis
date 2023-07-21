@@ -1,0 +1,9 @@
+name: julia-env
+channels:
+  - conda-forge
+dependencies:
+  - julia=1.6
+  - jupyter
+  - pip
+  - pip:
+    - Pluto
