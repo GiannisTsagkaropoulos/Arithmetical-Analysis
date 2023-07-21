@@ -213,7 +213,7 @@ hint(md"""
 
 $$s_i(x)= \cfrac{z_{i+1}}{6hi}(x^3-3x_ix^2+3x_i^2x)  +  \cfrac{z_i}{6h_i}(3x_{i+1}x^2-x^3-3x_{i+1}^2x)+ C'x+D'.$$
 
-In order to construct perfect cubes, we add and subtract $x_i^3$ and $x_{i+1}^3$ to the 1st and 2nd term of $s_i(x)$ respectively.
+In order to construct perfect cubes, we add and subtract $x_i^3$ and $x_{i+1}^3$ to the $1$st and $2$nd term of $s_i(x)$ respectively.
 
 $$\begin{aligned}s_i(x)= \cfrac{z_{i+1}}{6hi}(x^3-3x_ix^2+3x_i^2x&-x_i^3+x_i^3) + C'x+D'+ \\
 &+ \cfrac{z_i}{6h_i}(3x_{i+1}x^2-x^3-3x_{i+1}^2x-x_{i+1}^3+x_{i+1}^3).\end{aligned}$$
