@@ -55,6 +55,7 @@ jobs:
 
                   PlutoSliderServer.github_action(".";
                     Export_cache_dir="pluto_state_cache",
+                    Export_dir="Pluto_Notebooks",  # Specify the export directory as "docs"
                     Export_baked_notebookfile=false,
                     Export_baked_state=false,
                     # more parameters can go here
@@ -66,5 +67,5 @@ jobs:
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   branch: gh-pages
-                  folder: .
+                  folder: Pluto_Notebooks
                   single-commit: true
