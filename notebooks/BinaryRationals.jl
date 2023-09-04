@@ -598,14 +598,6 @@ md"""
 ## Action 🎬
 """
 
-# ╔═╡ 4ff0ee4f-8dcd-4d54-8ab2-f96d55051ca1
-Show(MIME"text/html"(),"""<p style="font-size:15.0pt">
-		<i>First select the maximum length of the fractional part of the binary rationals we are searching for (less than 24), using the slider below:</i>
-		</p>""")
-
-# ╔═╡ c7c1d5dc-f3db-4697-81e1-e8132f498cde
-@bind digit_accur Slider(3:16, 8, true)
-
 # ╔═╡ 26c7fdf1-f44b-4763-b9eb-86dba0419555
 Show(MIME"text/html"(),"""<p style="font-size:16.0pt">
 		Pick the first🥇 number:
@@ -660,6 +652,14 @@ begin #we want a<b
 		Let the 🪄 name 'a' the smaller of the two and 'b' the bigger number!
 		</p>""")
 end
+
+# ╔═╡ 4ff0ee4f-8dcd-4d54-8ab2-f96d55051ca1
+Show(MIME"text/html"(),"""<p style="font-size:15.0pt">
+		<i>Select below the maximum length of the fractional part of the binary rationals we are searching for (less than 24), using the slider below:</i>
+		</p>""")
+
+# ╔═╡ c7c1d5dc-f3db-4697-81e1-e8132f498cde
+@bind digit_accur Slider(3:16, 8, true)
 
 # ╔═╡ 0a5a1032-529e-4489-adfb-788137ff39e8
 begin
@@ -1354,8 +1354,6 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─831ed6f7-72ab-4c1e-be32-0a1984beadb6
 # ╟─858d4abe-71d0-4763-961c-c5ff7b140bb6
 # ╟─833d16cc-671f-4452-8166-713b8c9c6d5e
-# ╟─4ff0ee4f-8dcd-4d54-8ab2-f96d55051ca1
-# ╟─c7c1d5dc-f3db-4697-81e1-e8132f498cde
 # ╟─26c7fdf1-f44b-4763-b9eb-86dba0419555
 # ╟─a8af606d-0703-4eba-882e-105a20c0d3dd
 # ╟─3252cf7e-d76f-4c24-ab4c-25e1f456e091
@@ -1363,10 +1361,12 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─bd4507f6-e42f-4f66-8d8e-d046d9e62ca9
 # ╟─0a5a1032-529e-4489-adfb-788137ff39e8
 # ╟─1fb39575-fe39-46ec-ba0c-5d1179945507
+# ╟─4ff0ee4f-8dcd-4d54-8ab2-f96d55051ca1
+# ╟─c7c1d5dc-f3db-4697-81e1-e8132f498cde
 # ╟─27846cb2-f1ec-4483-b9d2-012ad6f189dd
 # ╟─72027d0c-80c7-4f95-9a32-2cbd82a01703
 # ╟─08f86a60-c38c-4d63-ae66-f95b23e14eea
-# ╠═a062a5e1-9803-4e1f-9dd3-386d07f73478
+# ╟─a062a5e1-9803-4e1f-9dd3-386d07f73478
 # ╟─4311dd62-95cf-4855-8789-3ea045ee729a
 # ╟─31de82c7-b9e1-4752-9e6a-b68eb46cb768
 # ╟─8430061d-9090-48e1-bd90-964cdb0c1844

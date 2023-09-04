@@ -98,13 +98,10 @@ So $123_{(10)}=1111011_{(2)}$.
 
 """
 
-# ╔═╡ 7b3c6151-9057-4341-97d5-f386e4bbf067
-md"""
-### Fractional Part Conversion
-"""
-
 # ╔═╡ e198490f-ece7-4afe-a1c3-3ce081e04b42
 md"""
+### Fractional Part Conversion
+
 - Start with the fraction in question and multiply it by 2 keeping notice of the resulting integer and fractional part.
 - Continue multiplying by 2 until you get a resulting fractional part equal to zero (not all numbers have a finite binary representation). 
 - Write out the integer parts from the results of each multiplication.
@@ -298,7 +295,7 @@ Show(MIME"text/html"(),"""<p style="font-size:16.0pt">
   padding: 12px;
 	color:black;
   border-radius: 3px;
-  width: 150px;
+  width: 100px;
   font-size: 14px;"
 } />
 """
@@ -608,7 +605,6 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─4738863b-124a-437e-a36e-056c92394885
 # ╟─7e337ded-29c7-488c-bd17-e76553550fee
 # ╟─ae7d7089-9dd9-438a-8d2f-b234e68851c7
-# ╟─7b3c6151-9057-4341-97d5-f386e4bbf067
 # ╟─e198490f-ece7-4afe-a1c3-3ce081e04b42
 # ╟─0dadd27e-e6cf-4267-b44b-37d119e1ea1a
 # ╟─fe2f6006-2878-4a1a-be5e-3673d66a8617

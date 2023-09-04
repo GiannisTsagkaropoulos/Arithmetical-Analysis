@@ -362,54 +362,6 @@ function ieee_zero_integer(decimal_fractional_part)
 	return(exponent_decimal,mult)
 end
 
-# ╔═╡ 69abfe35-e89e-439b-98e3-7e24558b7af0
-md"""
-## Action🎬
-"""
-
-# ╔═╡ 8a43222a-835b-4425-857d-135d0a021998
-Show(MIME"text/html"(),"""<p style="font-size:16.0pt">
-		Pick a number in decimal:
-		</p>""")
-
-# ╔═╡ 739dfa26-4d0c-46fb-8fd1-be5df7c1d6f7
-@bind decimal_number html"""<input placeholder="0.1" "type="number"  style="border: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: #f2f2f2;
-  padding: 12px;
-	color:black;
-  border-radius: 3px;
-  width: 150px;
-  font-size: 14px;"
-} />
-"""
-
-# ╔═╡ 470a598e-aa4b-4a36-a02d-0ff8e521d40a
-Show(MIME"text/html"(),"""<p style="font-size:16.0pt">
-		Select the format(s) in which you want to save $decimal_number's binary representation.
-		</p>""")
-
-# ╔═╡ e1f4244c-a3a9-482d-9504-8c69039df292
-begin
-	fixed_point_checkbox = @bind fixed html"<input type=Checkbox Unchecked>"
-	
-	ieee32_checkbox = @bind ieee32 html"<input type=Checkbox Unchecked>"
-	
-	ieee64_checkbox = @bind ieee64 html"<input type=Checkbox Unchecked>"
-	
-	md"""
-	
-	Fixed-point $24$-bits: $(fixed_point_checkbox)
-	
-	IEEE $754$ $32$-bits: $(ieee32_checkbox)
-	
-	IEEE $754$ $64$-bits: $(ieee64_checkbox)
-	"""
-end
-
 # ╔═╡ fee54a51-db4b-4e05-8b6b-9ad176984b4a
 function ieee(decimal_number::String, mantissa_bits::Int64, bias::Int64)
 #Split decimal number in fractional and decimal part & defining sign bit	
@@ -442,7 +394,64 @@ function ieee(decimal_number::String, mantissa_bits::Int64, bias::Int64)
 	return(binary_number, truncated)
 end
 
-# ╔═╡ bf6c23b7-d1cc-4631-9eaf-89de8147f2e9
+# ╔═╡ 69abfe35-e89e-439b-98e3-7e24558b7af0
+md"""
+## Action🎬
+"""
+
+# ╔═╡ 8a43222a-835b-4425-857d-135d0a021998
+Show(MIME"text/html"(),"""<p style="font-size:16.0pt">
+		Pick a number in decimal:
+		</p>""")
+
+# ╔═╡ 739dfa26-4d0c-46fb-8fd1-be5df7c1d6f7
+@bind decimal_number html"""<input placeholder="0.1" "type="number"  style="border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: 12px;
+	color:black;
+  border-radius: 3px;
+  width: 150px;
+  font-size: 14px;"
+} />
+"""
+
+# ╔═╡ 470a598e-aa4b-4a36-a02d-0ff8e521d40a
+Show(MIME"text/html"(),"""<p style="font-size:16.0pt">
+		Select the format(s) in which you want to save $decimal_number's binary representation.
+		
+	<br>
+⚠️ <span style="color:red;">Caution:</span> In order to avoid app crashes when chaning the decimal number, unselect all selections below <i>before changing the decimal number!</i>	
+</p>
+""")
+
+# ╔═╡ 35950a8d-fc32-4210-8540-e0481b1a8ff6
+begin
+	fixed_point_checkbox = @bind fixed html"<input type=Checkbox Unchecked>"
+	
+	ieee32_checkbox = @bind ieee32 html"<input type=Checkbox Unchecked>"
+	
+	ieee64_checkbox = @bind ieee64 html"<input type=Checkbox Unchecked>"
+	
+	md"""
+	
+	Fixed-point $24$-bits: $(fixed_point_checkbox)
+	
+	IEEE $754$ $32$-bits: $(ieee32_checkbox)
+	
+	IEEE $754$ $64$-bits: $(ieee64_checkbox)
+	"""
+end
+
+# ╔═╡ dfea52b1-6aa4-43b2-b412-4518114695b9
+md"""
+---
+"""
+
+# ╔═╡ 541ac078-85c0-4308-b3e7-56619fd629c6
 if fixed 
 	binary_number24, truncated24 = fixed_point_24(decimal_number)
 	if binary_number24 == nothing
@@ -468,26 +477,6 @@ if fixed
 	end
 end
 
-# ╔═╡ 34270e61-26ca-4503-bdc6-fd2f7c9e8f15
-if ieee32 
-	binary_number32, truncated32 = ieee(decimal_number,23,127)
-	if truncated32 == "truncated"
-		HTML("""
-		<li>
-		<p style="font-size:20px">The binary representation of number $decimal_number in IEEE 754 32-bit format is: <br>
-		$binary_number32 (<span style="color:red;">$truncated32</span>)</p>
-		</li>
-		""")
-	else
-		HTML("""
-		<li>
-		<p style="font-size:20px">The binary representation of number $decimal_number in IEEE 754 32-bit format is: <br>
-		$binary_number32 (<span style="color:green;">$truncated32</span>)</p>
-		</li>
-		""")
-	end
-end 
-
 # ╔═╡ 40fb77f6-00cf-4991-96f8-7e4b8d2e3f7b
 if ieee64 
 	binary_number64, truncated64 = ieee(decimal_number, 52,1023)
@@ -503,6 +492,26 @@ if ieee64
 		<li>
 		<p style="font-size:20px">The binary representation of number $decimal_number in IEEE 754 64-bit format is: <br>
 		$binary_number64 (<span style="color:green;">$truncated64</span>)</p>
+		</li>
+		""")
+	end
+end 
+
+# ╔═╡ 34270e61-26ca-4503-bdc6-fd2f7c9e8f15
+if ieee32 
+	binary_number32, truncated32 = ieee(decimal_number,23,127)
+	if truncated32 == "truncated"
+		HTML("""
+		<li>
+		<p style="font-size:20px">The binary representation of number $decimal_number in IEEE 754 32-bit format is: <br>
+		$binary_number32 (<span style="color:red;">$truncated32</span>)</p>
+		</li>
+		""")
+	else
+		HTML("""
+		<li>
+		<p style="font-size:20px">The binary representation of number $decimal_number in IEEE 754 32-bit format is: <br>
+		$binary_number32 (<span style="color:green;">$truncated32</span>)</p>
 		</li>
 		""")
 	end
@@ -774,6 +783,7 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─cb8cd5b9-8978-4d8e-b147-a6f338fa79bb
 # ╠═ac5019b0-910d-4cd7-9f21-e43d041afcda
 # ╟─b82a5d2a-f7b0-4ae4-92b5-2156e4a0726c
+# ╠═fee54a51-db4b-4e05-8b6b-9ad176984b4a
 # ╟─41076717-db60-4c91-8ae3-149afd705a3e
 # ╟─12487f9e-9b9c-4b2b-9013-103025eef6f6
 # ╠═fc16c4d8-d969-4acc-ac9d-8fab266b4432
@@ -785,10 +795,10 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─8a43222a-835b-4425-857d-135d0a021998
 # ╟─739dfa26-4d0c-46fb-8fd1-be5df7c1d6f7
 # ╟─470a598e-aa4b-4a36-a02d-0ff8e521d40a
-# ╟─e1f4244c-a3a9-482d-9504-8c69039df292
-# ╟─fee54a51-db4b-4e05-8b6b-9ad176984b4a
-# ╟─bf6c23b7-d1cc-4631-9eaf-89de8147f2e9
-# ╟─34270e61-26ca-4503-bdc6-fd2f7c9e8f15
+# ╟─35950a8d-fc32-4210-8540-e0481b1a8ff6
+# ╟─dfea52b1-6aa4-43b2-b412-4518114695b9
+# ╟─541ac078-85c0-4308-b3e7-56619fd629c6
 # ╟─40fb77f6-00cf-4991-96f8-7e4b8d2e3f7b
+# ╟─34270e61-26ca-4503-bdc6-fd2f7c9e8f15
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

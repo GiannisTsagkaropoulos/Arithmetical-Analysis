@@ -117,11 +117,10 @@ md"""
 """
 
 # ╔═╡ a35f8971-e176-4d1d-b184-61000da218cc
-Show(MIME"text/html"(),"""
-		<p  style="font-size:15.0pt">
-		Define the function f(x) that we want to interpolate by changing the code block below: <br>
-		
-		</p>""")
+md"""
+#### Define ❗️your own❗️ function by editing the code block below
+
+"""
 
 # ╔═╡ 9631d6fe-3350-4687-9f17-cf7dbf872461
 function f(x)
@@ -1436,7 +1435,7 @@ version = "1.4.1+0"
 # ╟─715f1ff3-7281-4992-95ac-66661178d7c2
 # ╟─21c246b8-44a1-498c-8192-20da834967f9
 # ╟─1298a540-3246-4778-abf7-60430b1990b2
-# ╠═e8ef6743-d3d6-4ee6-a4c5-9e8f9ea5379f
+# ╟─e8ef6743-d3d6-4ee6-a4c5-9e8f9ea5379f
 # ╟─cee176bf-32c2-4b89-9a84-da760f516619
 # ╟─ac754649-72ec-4d1e-a959-9f5b26cb19c1
 # ╟─215df692-5c1a-4b10-98a7-b9dd860e2344

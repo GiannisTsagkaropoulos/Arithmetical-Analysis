@@ -596,7 +596,7 @@ begin
 	spline_y = NaturalCubicSpline(x,y, spline_x)
 	#xx=range(f_x[1],f_x[end],length=lsize)
 	#scatter(x,y,label="Points")
-	scatter(x,y,label="Points")
+	scatter(x,y,label="Points",legend = :topleft)
 	plot!(x,y, label="f")
 	plot!(spline_x,spline_y, label="spline")
 	#plot!(xx,ySpline,label="Spline")
