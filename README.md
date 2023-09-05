@@ -6,7 +6,7 @@ Computational implementation of algorithms taught in Arithmetical Analysis lectu
 
 ## Notebooks
 
-The interactive Pluto Notebooks can be utilized to observe the problem-solving process in Computer Arithmetic & Interpolation, making them excellent tools for both visualizing the subject matter and facilitating teaching. I encourage you to visit them ![here](https://giannistsagkaropoulos.github.io/Arithmetical-Analysis/) and to use them for your educational benefit.
+The interactive Pluto Notebooks can be utilized to observe the problem-solving process in Computer Arithmetic & Interpolation, making them excellent tools for both visualizing the subject matter and facilitating teaching. I encourage you to visit them [here](https://giannistsagkaropoulos.github.io/Arithmetical-Analysis/) and to use them for your educational benefit.
 
 ## Code examples
 
